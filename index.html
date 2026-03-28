@@ -92,6 +92,43 @@
             background-color: #1e1e1e;
             color: #aaa;
         }
+
+        /* Projects Grid */
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .project-box {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            width: 250px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #33a060;
+        }
+
+        /* Full-screen zoom effect */
+        .project-box.zoomed {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            transform: translate(-50%, -50%) scale(1);
+            z-index: 1000;
+            background-color: #1e1e1e;
+            box-shadow: 0 0 50px #33a060;
+        }
     </style>
 </head>
 <body>
@@ -124,11 +161,21 @@
 
     <section id="projects">
         <h2>Projects</h2>
-        <ul>
-            <li>Project Luma – This Project is to test the limits of Unreal Engine and Roblox Studio. With this I/we are making relaxing, aesthetic games and art to help people relax.<a href="#">link</a></li>
-            <li>Fleaq – Fleaq is a Studio funding all my projects and continuing to find new ways to entertaining people while also doing different things here and there.</li>
-            <li>Just Mining – A chill layed back Roblox game where you mine ores and upgrade your pickaxe over time.</li>
-        </ul>
+        <div class="project-grid">
+            <div class="project-box" onclick="zoomProject(this)">
+                <h3>Project Luma</h3>
+                <p>This Project is to test the limits of Unreal Engine and Roblox Studio. We are making relaxing, aesthetic games and art to help people relax.</p>
+                <a href="#">link</a>
+            </div>
+            <div class="project-box" onclick="zoomProject(this)">
+                <h3>Fleaq</h3>
+                <p>Fleaq is a Studio funding all my projects and continuing to find new ways to entertain people while doing different things.</p>
+            </div>
+            <div class="project-box" onclick="zoomProject(this)">
+                <h3>Just Mining</h3>
+                <p>A chill laid-back Roblox game where you mine ores and upgrade your pickaxe over time.</p>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
@@ -156,6 +203,18 @@
         }, { threshold: 0.2 });
 
         sections.forEach(section => observer.observe(section));
+
+        // Zoom project boxes
+        function zoomProject(box) {
+            if (box.classList.contains('zoomed')) {
+                box.classList.remove('zoomed');
+                document.body.style.overflow = 'auto';
+            } else {
+                document.querySelectorAll('.project-box.zoomed').forEach(p => p.classList.remove('zoomed'));
+                box.classList.add('zoomed');
+                document.body.style.overflow = 'hidden';
+            }
+        }
     </script>
 </body>
 </html>
