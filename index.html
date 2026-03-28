@@ -1,1 +1,161 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>My Portfolio By Bush</title> <style> body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #121212; color: #ddd; } header { position: relative; text-align: center; color: white; } header img { width: 100%; max-height: 300px; object-fit: cover; filter: brightness(0.7); } header h1 { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); font-size: 3em; text-shadow: 2px 2px 8px #000; } nav { text-align: center; margin: 10px 0; } nav button { margin: 0 10px; padding: 10px 15px; border: none; background-color: #1f8b4c; /* darker green */ color: white; font-weight: bold; cursor: pointer; border-radius: 5px; transition: background 0.3s; } nav button:hover { background-color: #33a060; } section { padding: 20px; max-width: 800px; margin: 20px auto; background-color: #1e1e1e; border-radius: 5px; opacity: 0; transform: translateY(50px); transition: opacity 1s ease, transform 1s ease; } section.visible { opacity: 1; transform: translateY(0); } section img { max-width: 100%; margin-top: 10px; border-radius: 5px; } h2 { color: #33a060; } a { color: #33a060; } footer { text-align: center; padding: 10px; background-color: #1e1e1e; color: #aaa; } </style> </head> <body> <header> <img src="Banner.png" alt="Banner"> <h1>That 1 Bush</h1> </header> <nav> <button onclick="scrollToSection('about')">About Me</button> <button onclick="scrollToSection('skills')">Skills</button> <button onclick="scrollToSection('projects')">Projects</button> <button onclick="scrollToSection('contact')">Contacts</button> </nav> <section id="about"> <h2>About Me</h2> <p>Hello! I'm Bush, a 3D Artist, Modeler and Game Dev. I love creating cool projects and learning new things.</p> </section> <section id="skills"> <h2>Skills</h2> <ul> <li>Programming: A little LUA and learning Python</li> <li>Web Development: HTML</li> <li>Game Design: Roblox Studio, Unreal Engine</li> <li>Other: GFX in Blender</li> </ul> </section> <section id="projects"> <h2>Projects</h2> <ul> <li>Project Luma – To be described <a href="#">link</a></li> <li>Fleaq – To be described <li>Project 3 – Description not found. </ul> </section> <section id="contact"> <h2>Let's chat!</h2> <p>Discord: tht1bu.xsh</p> </section> <footer> <p>This website is made and designer by tht1bu.xsh on Discord</p> </footer> <script> function scrollToSection(id) { const section = document.getElementById(id); section.scrollIntoView({ behavior: "smooth" }); } const sections = document.querySelectorAll('section'); const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.2 }); sections.forEach(section => observer.observe(section)); </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio By Bush</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ddd;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        header img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        header h1 {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            text-shadow: 2px 2px 8px #000;
+        }
+
+        nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        nav button {
+            margin: 0 10px;
+            padding: 10px 15px;
+            border: none;
+            background-color: #1f8b4c;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #33a060;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #1e1e1e;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section img {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #33a060;
+        }
+
+        a {
+            color: #33a060;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1e1e1e;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="banner.png" alt="banner">
+        <h1>That 1 Bush</h1>
+    </header>
+
+    <nav>
+        <button onclick="scrollToSection('about')">About Me</button>
+        <button onclick="scrollToSection('skills')">Skills</button>
+        <button onclick="scrollToSection('projects')">Projects</button>
+        <button onclick="scrollToSection('contact')">Contacts</button>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Bush, a 3D Artist, Modeler and Game Dev. I love creating cool projects and learning new things.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming: A little LUA and learning Python</li>
+            <li>Web Development: HTML</li>
+            <li>Game Design: Roblox Studio, Unreal Engine</li>
+            <li>Other: GFX in Blender</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>Project Luma – To be described <a href="#">link</a></li>
+            <li>Fleaq – To be described</li>
+            <li>Project 3 – Description not found.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Let's chat!</h2>
+        <p>Discord: tht1bu.xsh</p>
+    </section>
+
+    <footer>
+        <p>This website is made and designed by tht1bu.xsh on Discord</p>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>
